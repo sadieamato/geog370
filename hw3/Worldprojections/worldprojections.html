@@ -9,15 +9,30 @@
     <h1>In this project I learned how to display images in different projections</h1>
     
     <h2 style="color:red">Describe in your own words how you displayed the map in different projections using QGIS</h2>
-    <p>You can write a paragraph here</p>
+    <p>To display the world map in different projections, I first added the Natural Earth data to the project using the data source manager.
+        At first, the data was shown in EPSG: 4326 projection, and to see the distortion present in this projection I clicked on the Indicatrix Mapper
+        plugin's logo and clicked run. To switch the map to a new projection and see the corresponding effects, I clicked on the EPSG number on the bottom
+        right of the project. Next, I searched for the projection I was looking for, either by its name or its EPSG number. Then I selected the new projection
+        and clicked OK for the project to switch into a new projection. This way, I could view the world's continents in different projections.
+    </p>
     
     <h2>WGS84 Projection</h2>
-    <h3>Some observations</h3>
+    <h4>This projection projects the world onto a rectangular shape. In doing so, it slightly distorts both
+        the shape and area of the land. From the Indicatrix Mapper marks, we can tell that this projection
+        stretches the land horizontally and shrinks the land vertically. It also distorts the area somewhat. Overall, however,
+        this projection mainly manages to minimize the distortion of the land while shaping the Earth into a rectangular
+        shape that is suitable for online graphics that must be rectangular.
+        
+        Some observations: For each map, the description explains the pros/cons of the projection in terms of what it preserves and what it distorts (e.g., distance, shape, area).</h3>
     <a href=".//maps/4326.png">
     <img src=".//maps/4326.png" alt="WGS84" width='500px'>
     </a>
     <h2>Aitoff Projection</h2>
-    <h3>Some observations</h3>
+    <h4>The World Aitoff projection projects the world onto an ellipse, helping the viewer see the Earth as round.
+        The land's shape and area is somewhat distorted in this projection. The area of the land close to the poles
+        appears slightly larger than that at the Equator. Additionally, the land's shape is stretched vertically closer to the poles,
+        and this effect is amplified on the shapes found on the corners of the image.
+    </h4>
     <a href=".//maps/54043.png">
     <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
     </a>
@@ -25,31 +40,40 @@
     <h3>EPSG: 3857, 53018, 54034, 54027, 102016, and two additional projections that you choose.</h3>
     
     <h2>Pseudo-Mercator Projection</h2>
-    <h3>Some observations</h3>
+    <h4>This projection projects the world onto a rectangular (nearly square) shape. In doing so, the area of the land is changed dramatically.
+        This projection does maintain the correct shape of all the land masses, but it appears to quadruple the area of the shapes closest 
+        to the poles. Overall, this projection is very useful for seeing the shape and area of the land masses closer to the middle of the Earth,
+        but it is only useful for seeing the shape of the more northern land masses.
+    </h4>
     <img src=".//maps/3857.png" alt="Pseudo-Mercator" width='600px'>
 
     <h2>Sphere Winkel I Projection</h2>
-    <h3>Some observations</h3>
+    <h4>The Sphere Winkel I projection is fairly similar to the Aitoff projection. It also projects the world onto 
+        an ellipse, evoking a round Earth. However, this ellipse has a shorter semi-major axis than the Aitoff projection.
+        The land masses are slightly distorted in this projection, both in shape and area. The land masses at the 
+        poles are slightly larger in area and more elliptical in their shape. The ones at the corners are also stretched
+        more than the masses in the center.
+    </h4>
     <img src=".//maps/53018.png" alt="Sphere Winkel I" width='600px'>
 
     <h2>World Cylindrical Equal Area Projection</h2>
-    <h3>Some observations</h3>
+    <h4>Some observations</h4>
     <img src=".//maps/54034.png" alt="World Cylindrical Equal Area" width='700px'>
 
     <h2>World Equidistant Conic Projection</h2>
-    <h3>Some observations</h3>
+    <h4>Some observations</h4>
     <img src=".//maps/54027.png" alt="World Equidistant Conic" width='600px'>
 
     <h2>North Pole Azimuthal Equidistant Projection</h2>
-    <h3>Some observations</h3>
+    <h4>Some observations</h4>
     <img src=".//maps/102016.png" alt="World Equidistant Conic" width='600px'>
     
     <h2>World Two Point Equidistant Projection</h2>
-    <h3>Some observations</h3>
+    <h4>Some observations</h4>
     <img src=".//maps/54031.png" alt="World Equidistant Conic" width='600px'>
 
     <h2>Sphere Patterson Projection</h2>
-    <h3>Some observations</h3>
+    <h4>Some observations</h4>
     <img src=".//maps/53079.png" alt="World Equidistant Conic" width='600px'>
 
     <h2>Data used for this project</h2>
