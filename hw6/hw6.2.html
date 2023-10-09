@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 6.2</title>
+</head>
+<body>
+<h1>Homework 6.2: Census data choropleth methods of classification</h1>
+
+<!-- For each map add a title that describes the ratio and the mode used to categorize the data. 
+    On a webpage explain the ratio that you did and the reason for creating that ratio. 
+    Also discuss breifly the pros and cons for each classification scheme. -->
+
+<!--- Map 1 --->
+<h3>Chosen Ratio:</h3>
+<p>The ratio that I created for this map is the number of people in NY counties with 3 or more risk factors per 100 people. This ratio can also be 
+    defined as the percentage of the population that has 3 or more risk factors. See description of the risk factors used in this dataset 
+    <a href="https://www.census.gov/programs-surveys/community-resilience-estimates/technical-documentation/methodology.html">here</a>. I created this ratio
+    because, without normalization, this choropleth would likely look extremely similar to a population distribution map of NY. Since the total population 
+    is partly composed of the high-risk population, I used the total population as the denominator in my ratio.
+</p>
+
+<h2>NY's High Risk Population: Normalized with High-Risk Population / Total Population and Classified with Equal Intervals</h2>
+
+<a href="../pngs/ny-risk-eqinterval.png">
+    <img src="../pngs/ny-risk-eqinterval.png" alt="Map of New York's population with 3 or more risk factors by county, classified with the equal interval method" width='700px'>
+    </a>
+<p>In the first map above, I used the Equal Interval classification scheme. As we can see, there doesn't appear to be much variation in most of the state.
+    This is partially a result of the fact that the Equal Interval classification method can obscure vast differences within categories (we cannot 
+    decipher any differences between all of the tan colored counties). On the plus side, equal intervals/bins are very natural for our brain to categorize
+    things, so it is easier to understand this scheme. It also clearly illustrates that Bronx County's population has a much higher percentage of high-risk individuals than any other county.</p>
+<hr>
+
+<!--- Map 2 --->
+<h2>NY's High Risk Population: Normalized with High-Risk Population / Total Population and Classified with Equal Counts (Quantile)</h2>
+
+<a href="../pngs/ny-risk-quantile.png">
+    <img src="../pngs/ny-risk-quantile.png" alt="Map of New York's population with 3 or more risk factors by county, classified with the equal count (quantile) method" width='700px'>
+    </a>
+<p>In this map, I classified the data with the Equal Counts (Quantile) method. This method puts the same amount of counties into each category, so it 
+    produces a map that looks much more varied. Additionally, with this map we can see differences between more of the counties outside New York City.
+    However, this method obscures the fact that Bronx County is a high outlier (at 42%), since it appears in the same category now as counties that were in
+    the 24.6% - 30.4% bracket in the previous map.
+</p>
+<hr>
+
+<!--- Map 3 --->
+<h2>NY's High Risk Population: Normalized with High-Risk Population / Total Population and Classified with Natural Breaks</h2>
+
+<a href="../pngs/ny-risk-natbreaks.png">
+    <img src="../pngs/ny-risk-natbreaks.png" alt="Map of New York's population with 3 or more risk factors by county, classified with the natural breaks method" width='700px'>
+    </a>
+<p>Lastly, I used the Natural Breaks method to classify the data for this map. As can be seen, this map appears to be somewhat in between the two previous
+    ones. This method splits the data at "natural" places, so it tends to reveal outliers and differences fairly well. We can see the lowest and highest counties
+    here, and there is not as much difference obscured as in the Equal Interval method. The main drawback to this method is the fact that the bin sizes are variable,
+    meaning the legend and map as a whole will be harder to quickly understand.
+</p>
