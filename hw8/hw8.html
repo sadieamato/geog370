@@ -7,9 +7,36 @@
 </head>
 <body>
 <h1>Homework 8: Vector Spatial Analysis </h1>
-<h2>Sadie Amato</h2>
+<h3>Sadie Amato</h3>
+
+<h2>Question: What Proportion of Apex Neighborhoods are Within 0.5 Miles of a Transit Stop?</h2>
+
+
 
 <!-- Your map goes here -->
 <a href="../pngs/apextransit-neighborhoods.png">
     <img src="../pngs/apextransit-neighborhoods.png" alt="Map of Apex neighborhoods inside and outside 0.5 mile buffers of transit stops" width='850px'>
     </a>
+
+<!--Upload your map and submit the links to your data sources and to the new datasets that you make. 
+    Indicate (on the webpage) the methods that you used and the questions that you answered with your analysis.-->
+
+
+    <h2>Methods</h2>
+    <p>For this map, I used geoprocessing to take a closer look at a topic I previously mapped (see my <a href="../hw1/hw1.html">HW 1</a>).
+        First, I uploaded the Apex Residential Development polygons and the Apex Transit Stop points to QGIS as normal. Then, I projected the data
+        into a local NC projection that uses meters to better use the geoprocessing tools. I used the buffer tool to create a 0.5 mile buffer around
+        all the transit stop points to simulate the areas around the stops where I believe the general population would possibly walk to the stops from.
+        This is obviously not a perfect science, since distance is not the only barrier to walkability, but it is what I am studying in this map.
+        Next, I used the intersect tool to create a new layer where the transit stop buffers overlapped with the neighborhood polygons. Displaying this
+        area on the map, in contrast with the area outside the buffer, answers the question about what proportion of neighborhoods in Apex are
+        within 0.5 miles of a transit stop.</p>
+
+    <h3>Data Sources</h3>
+    <a href="https://gisdata-apexnc.opendata.arcgis.com/datasets/neighborhoods-residential-development/explore">Apex Residential Areas (Neighborhoods)</a>
+    <p></p>
+    <a href="https://gisdata-apexnc.opendata.arcgis.com/datasets/apexpl-pl-all-apex-transit-stops/explore?location=35.731688%2C-78.864876%2C12.87">Apex Transit Stops</a>
+    <h3>Data Created</h3>
+    <a href="https://github.com/sadieamato/geog370/blob/main/hw8/data/transit-stop-buffers.geojson">Apex Transit Stops 0.5 Mile Buffer</a>
+    <p></p>
+    <a href="https://github.com/sadieamato/geog370/blob/main/hw8/data/neighborhoods-within-buffer.geojson">Apex Neighborhoods Within 0.5 Mile Buffer of Transit Stops</a>
